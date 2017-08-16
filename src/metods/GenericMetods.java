@@ -11,21 +11,21 @@ public class GenericMetods {
 
         String[] arr = new String[]{"1", "2", "3", "4"};
         System.out.println("New array: " + Arrays.toString(arr));
-        new GenericMetods().swapElements(arr, 2, 3);
+        swapElements(arr, 2, 3);
         System.out.println("Array after swap 2 elements: " + Arrays.toString(arr));
 
-        ArrayList<?> newList = new GenericMetods().arrayToList(arr);
+        ArrayList<?> newList = arrayToList(arr);
         System.out.println("List from array: " + Arrays.toString(newList.toArray()));
 
     }
 
-    public <T> void swapElements(T[] arr, int index1, int index2) {
+    public static <T> void swapElements(T[] arr, int index1, int index2) {
         T temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
     }
 
-    public <T> ArrayList<T> arrayToList(T[] arr) {
+    public static <T> ArrayList<T> arrayToList(T[] arr) {
         ArrayList<T> list = new ArrayList<>(arr.length);
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);

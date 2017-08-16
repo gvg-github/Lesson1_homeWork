@@ -5,13 +5,9 @@ package mainTask;
  */
 public class Fruit {
     private float weight;
-    private String type = "Fruit";
 
     public float getWeight() {
         return weight;
     }
 
-    public String getType() {
-        return type;
-    }
 }

@@ -5,10 +5,10 @@ package mainTask;
  */
 public class Main {
     public static void main(String[] args) {
-        Box boxAp1 = new Box("Apple box 1");
-        Box boxAp2 = new Box("Apple box 2");
-        Box boxOr1 = new Box("Orange box 1");
-        Box boxOr2 = new Box("Orange box 2");
+        Box<Apple> boxAp1 = new Box("Apple box 1");
+        Box<Apple> boxAp2 = new Box("Apple box 2");
+        Box<Orange> boxOr1 = new Box("Orange box 1");
+        Box<Orange> boxOr2 = new Box("Orange box 2");
 
         for (int i = 0; i < 12; i++) {
             boxAp1.addFruit(new Apple());
@@ -30,24 +30,16 @@ public class Main {
         }
         System.out.println("Вес коробки " + boxOr2.getName() + " - " + boxOr2.getWeight());
 
-        boxAp1.addFruit(new Orange());
-
+//        boxAp1.addFruit(new Orange());
 
         boxAp1.compare(boxOr1);
         boxAp2.compare(boxAp1);
 
-        boxOr2.removeFruits(boxAp1);
+//        boxOr2.removeFruits(boxAp1);
         boxOr2.removeFruits(boxOr1);
         System.out.println("Вес коробки " + boxOr2.getName() + " - " + boxOr2.getWeight());
         System.out.println("Вес коробки " + boxOr1.getName() + " - " + boxOr1.getWeight());
 
     }
 
-    public static void fillBox(Box box, int number, Fruit fruit) {
-        if (number != 0) {
-            for (int i = 0; i < number; i++) {
-                box.addFruit(fruit);
-            }
-        }
-    }
 }
